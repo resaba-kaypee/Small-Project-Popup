@@ -1,0 +1,63 @@
+*,*::before,*::after { box-sizing: border-box; }
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 5px solid blue;
+  border-radius: 5px;
+  z-index: 10;
+  width: 500px;
+  max-width: 80%;
+  background: #fff;
+}
+
+.modal.active{
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 5px solid blue;
+}
+
+.modal-body {
+  padding: 5px;
+}
+
+.modal-header.title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.modal-header.close {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
